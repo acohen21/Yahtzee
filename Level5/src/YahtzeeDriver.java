@@ -30,12 +30,11 @@ public class YahtzeeDriver
 				maxScore = score;
 			}
 
-			avgScore = 1.0*totalScore/numGames;
-
 			Scanner s = new Scanner(System.in);
-			System.out.println("Would you like to play again? (y/n");
+			System.out.println("Would you like to play again? (y/n)");
 			playing = s.nextLine().charAt(0);
 			numGames++;
+			avgScore = 1.0*totalScore/numGames;
 
 		} while(playing == 'y');
 		System.out.println("Games played: " + numGames + "\n"
