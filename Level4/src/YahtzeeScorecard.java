@@ -381,42 +381,54 @@ public class YahtzeeScorecard
 		}
 		if(ones==-1)System.out.print("__");
 			else System.out.print(ones);
-		System.out.println("       *");
+		if(ones < 10 && ones != -1) {
+			System.out.println("        *");
+		} else System.out.println("       *");
 		System.out.print("*  Twos:");
 		for(int s = 0; s < 20-("twos:".length()); s++) {
 			System.out.print(" ");
 		}
 		if(twos==-1)System.out.print("__");
 			else System.out.print(twos);
-		System.out.println("       *");
+		if(twos < 10 && twos != -1) {
+			System.out.println("        *");
+		} else System.out.println("       *");
 		System.out.print("*  Threes:");
 		for(int s = 0; s < 20-("threes:".length()); s++) {
 			System.out.print(" ");
 		}
 		if(threes==-1)System.out.print("__");
 			else System.out.print(threes);
-		System.out.println("       *");
+		if(threes < 10 && threes != -1) {
+			System.out.println("        *");
+		} else System.out.println("       *");
 		System.out.print("*  Fours:");
 		for(int s = 0; s < 20-("fours:".length()); s++) {
 			System.out.print(" ");
 		}
 		if(fours==-1)System.out.print("__");
 			else System.out.print(fours);
-		System.out.println("       *");
+		if(fours < 10 && fours != -1) {
+			System.out.println("        *");
+		} else System.out.println("       *");
 		System.out.print("*  Fives:");
 		for(int s = 0; s < 20-("fives:".length()); s++) {
 			System.out.print(" ");
 		}
 		if(fives==-1)System.out.print("__");
 			else System.out.print(fives);
-		System.out.println("       *");
+		if(fives < 10 && fives != -1) {
+			System.out.println("        *");
+		} else System.out.println("       *");
 		System.out.print("*  Sixes:");
 		for(int s = 0; s < 20-("sixes:".length()); s++) {
 			System.out.print(" ");
 		}
 		if(sixes==-1)System.out.print("__");
 			else System.out.print(sixes);
-		System.out.println("       *");
+		if(sixes < 10 && sixes != -1) {
+			System.out.println("        *");
+		} else System.out.println("       *");
 		System.out.println("*                               *");
 		System.out.print("*  Upper Bonus:");
 		for(int s = 0; s < 20-("upper bonus:".length()); s++) {
