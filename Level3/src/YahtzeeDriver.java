@@ -36,7 +36,6 @@ public class YahtzeeDriver
 			System.out.println("Would you like to play again? (y/n");
 			playing = s.nextLine().charAt(0);
 			numGames++;
-
 		} while(playing == 'y');
 		System.out.println("Games played: " + numGames + "\n"
 				+ "Min score: " + minScore + "\n"

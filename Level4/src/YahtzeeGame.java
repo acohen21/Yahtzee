@@ -115,7 +115,7 @@ public class YahtzeeGame
 	/* Asks the user which dice should be frozen 1-5 (should be read in in one line) */
 	private void chooseFrozen()
 	{
-		System.out.println("Choose which dice should be frozen (input numbers separated by spaces)");
+		System.out.println("Choose which dice should be frozen (input numbers 1-5)");
 		String freeze = s.nextLine();
 		if(freeze.indexOf("1") != -1) {
 			die1.freezeDie();
@@ -150,35 +150,69 @@ public class YahtzeeGame
 	   4. If false is returned the user entered an invalid number, so ask the user to try again	*/
 	private void markScore()
 	{
-		score.printScoreCard();
-		System.out.println("Where would you like to mark your score?" + "\n" +
-				"1. Ones \t7. 3 of Kind\n" +
-				"2. Twos \t8. 4 of Kind\n" +
-				"3. Threes \t9. Full House\n" +
-				"4. Fours \t10. Sm Straight\n" +
-				"5. Fives \t11. Lg Straight\n" +
-				"6. Sixes \t12. Yahtzee\n" +
-				"\t\t\t13. Chance\n" +
-				"Enter 1-13: ");
-		int entered = s.nextInt();
-		s.nextLine();
-		switch(entered) {
-			case 1: score.markOnes(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue()); break;
-			case 2: score.markTwos(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue()); break;
-			case 3: score.markThrees(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue()); break;
-			case 4: score.markFours(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue()); break;
-			case 5: score.markFives(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue()); break;
-			case 6: score.markSixes(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue()); break;
-			case 7: score.markThreeOfAKind(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue()); break;
-			case 8: score.markFourOfAKind(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue()); break;
-			case 9: score.markFullHouse(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue()); break;
-			case 10: score.markSmallStraight(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue()); break;
-			case 11: score.markLargeStraight(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue()); break;
-			case 12: score.markYahtzee(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue()); break;
-			case 13: score.markChance(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue()); break;
-			default: System.out.println("Invalid number. Try again.");
-
-
-		}
+		boolean valid;
+		boolean notFull;
+		do {
+			valid = true;
+			score.printScoreCard();
+			System.out.println("Where would you like to mark your score?" + "\n" +
+					"1. Ones \t7. 3 of Kind\n" +
+					"2. Twos \t8. 4 of Kind\n" +
+					"3. Threes \t9. Full House\n" +
+					"4. Fours \t10. Sm Straight\n" +
+					"5. Fives \t11. Lg Straight\n" +
+					"6. Sixes \t12. Yahtzee\n" +
+					"\t\t\t13. Chance\n" +
+					"Enter 1-13: ");
+			int entered = s.nextInt();
+			s.nextLine();
+			notFull = true;
+				switch (entered) {
+					case 1:
+						notFull = score.markOnes(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue());
+						break;
+					case 2:
+						notFull = score.markTwos(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue());
+						break;
+					case 3:
+						notFull = score.markThrees(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue());
+						break;
+					case 4:
+						notFull = score.markFours(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue());
+						break;
+					case 5:
+						notFull = score.markFives(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue());
+						break;
+					case 6:
+						notFull = score.markSixes(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue());
+						break;
+					case 7:
+						notFull = score.markThreeOfAKind(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue());
+						break;
+					case 8:
+						notFull = score.markFourOfAKind(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue());
+						break;
+					case 9:
+						notFull = score.markFullHouse(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue());
+						break;
+					case 10:
+						notFull = score.markSmallStraight(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue());
+						break;
+					case 11:
+						notFull = score.markLargeStraight(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue());
+						break;
+					case 12:
+						notFull = score.markYahtzee(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue());
+						break;
+					case 13:
+						notFull = score.markChance(die1.getValue(), die2.getValue(), die3.getValue(), die4.getValue(), die5.getValue());
+						break;
+					default:
+						System.out.println("Invalid number. Try again.");
+						valid = false;
+						break;
+				}
+			if(!notFull) { System.out.println("This is full, please try again"); }
+		} while(!valid || !notFull);
 	}
 }

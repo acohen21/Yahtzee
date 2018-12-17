@@ -460,14 +460,14 @@ public class YahtzeeScorecard
 		if(fullHouse==-1)System.out.print("__");
 			else System.out.print(fullHouse);
 		System.out.println("       *");
-		System.out.print("*  Sm Straight:"); //nah
+		System.out.print("*  Sm Straight:");
 		for(int s = 0; s < 20-("sm straight:".length()); s++) {
 			System.out.print(" ");
 		}
 		if(smStraight==-1)System.out.print("__");
 			else System.out.print(smStraight);
 		System.out.println("       *");
-		System.out.print("*  Lg Straight:");
+		System.out.print("*  Lg Straight:"); //nah
 		for(int s = 0; s < 20-("lg straight:".length()); s++) {
 			System.out.print(" ");
 		}
