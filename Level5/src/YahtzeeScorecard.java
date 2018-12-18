@@ -457,49 +457,63 @@ public class YahtzeeScorecard
 		}
 		if(threeKind==-1)System.out.print("__");
 			else System.out.print(threeKind);
-		System.out.println("       *");
+		if(threeKind < 10 && threeKind != -1) {
+			System.out.println("        *");
+		} else System.out.println("       *");
 		System.out.print("*  4 of Kind:");
 		for(int s = 0; s < 20-("4 of kind:".length()); s++) {
 			System.out.print(" ");
 		}
 		if(fourKind==-1)System.out.print("__");
 			else System.out.print(fourKind);
-		System.out.println("       *");
+		if(fourKind < 10 && fourKind != -1) {
+			System.out.println("        *");
+		} else System.out.println("       *");
 		System.out.print("*  Full House:");
 		for(int s = 0; s < 20-("full house:".length()); s++) {
 			System.out.print(" ");
 		}
 		if(fullHouse==-1)System.out.print("__");
 			else System.out.print(fullHouse);
-		System.out.println("       *");
+		if(fullHouse < 10 && fullHouse != -1) {
+			System.out.println("        *");
+		} else System.out.println("       *");
 		System.out.print("*  Sm Straight:");
 		for(int s = 0; s < 20-("sm straight:".length()); s++) {
 			System.out.print(" ");
 		}
 		if(smStraight==-1)System.out.print("__");
 			else System.out.print(smStraight);
-		System.out.println("       *");
+		if(smStraight < 10 && smStraight != -1) {
+			System.out.println("        *");
+		} else System.out.println("       *");
 		System.out.print("*  Lg Straight:"); //nah
 		for(int s = 0; s < 20-("lg straight:".length()); s++) {
 			System.out.print(" ");
 		}
 		if(lgStraight==-1)System.out.print("__");
 			else System.out.print(lgStraight);
-		System.out.println("       *");
+		if(lgStraight < 10 && lgStraight != -1) {
+			System.out.println("        *");
+		} else System.out.println("       *");
 		System.out.print("*  Yahtzee:");
 		for(int s = 0; s < 20-("yahtzee:".length()); s++) {
 			System.out.print(" ");
 		}
 		if(fiveKind==-1)System.out.print("__");
 			else System.out.print(fiveKind);
-		System.out.println("       *");
+		if(fiveKind < 10 && fiveKind != -1) {
+			System.out.println("        *");
+		} else System.out.println("       *");
 		System.out.print("*  Chance:");
 		for(int s = 0; s < 20-("chance:".length()); s++) {
 			System.out.print(" ");
 		}
 		if(chance==-1)System.out.print("__");
 			else System.out.print(chance);
-		System.out.println("       *");
+		if(chance < 10 && chance != -1) {
+			System.out.println("        *");
+		} else System.out.println("       *");
 		System.out.println("*                               *");
 		System.out.print("*  Lower Total:");
 		for(int s = 0; s < 20-("lower total:".length()); s++) {
